@@ -34,3 +34,10 @@ Core sequence:
 
 ## Rule
 Do not modify the supplied golden model or its reference tests during the core Week 1 exercise.
+
+## Verilog bootcamp — learning and handoff
+
+- [Exercise-by-exercise learning log](logbook/verilog-bootcamp.md): graded exercises, recurring syntax/RTL misconceptions, verification status, and open work.
+- [New-chat continuation handoff](docs/ELE455-NEW-CHAT-HANDOFF.md): complete tutoring protocol, current Exercise 21, technical context, and next steps.
+
+Bootcamp grades represent static chat reviews unless a terminal/simulator run is explicitly documented; they are not automatically build or test evidence.
