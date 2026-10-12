@@ -155,3 +155,6 @@ User reaffirmed original 8-stage roadmap. Stages 1–4 treated as foundational p
 
 ### Exercise 29 — 128-bit AddRoundKey datapath integration (2026-10-12)
 **1.5/5 static review, not compiled/simulated.** Learner used correct `state_in`, `round_key`, `captured_state ^ captured_key`, but captured inputs every non-reset edge without `(state == IDLE) && start`; put `if (state == PROCESS)` outside reset else (reset-priority conflict); used blocking `result =` rather than nonblocking `result <=`; extra unmatched `end`. Retest only code inside the reset `else` branch, with mutually exclusive acceptance/PROCESS and implicit hold. Omitted FSM is assumed scaffold and not verified. Spaced repetition: branch nesting, priority, transaction capture gating, nonblocking registers.
+
+### Exercise 29B — corrected AddRoundKey datapath (2026-10-12)
+**5/5 static review for the reset `else` block; not compiled or simulated.** Correct acceptance `if (state == IDLE && start)` capturing both 128-bit inputs, `else if (state == PROCESS)` producing `result <= captured_state ^ captured_key;`, nonblocking assignments, balanced nesting, and implicit hold. Learner did not yet answer why captured inputs must hold during PROCESS. Standalone FSM remains omitted scaffold, so integrated module not verified. Next: one-sentence conceptual check, then integrate and simulate.
