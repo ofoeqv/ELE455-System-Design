@@ -131,3 +131,6 @@ Earlier separate course preparation (reported in chat, **not verified by current
 
 ### Exercise 21B — second submission (2026-10-12)
 **3/5 static review, NOT compiled/simulated; correction still required.** Fixed `8'h99` comparison and closed `$fatal` message; blocks balanced. Repeated `assign a = 0x53;` / `assign b = 0xCA;` in procedural `initial`: must change to `a = 8'h53;` / `b = 8'hCA;`. `$finish` missing semicolon. Did not answer why `#1;` is needed (simulation scheduling/settling). Prioritize procedural vs continuous assignment and literal syntax for spaced repetition. Next task: corrected complete TB and conceptual explanation, no progression yet.
+
+### Exercise 21C — third submission (2026-10-12)
+**4/5 provisional static review; not compiled or simulated.** Corrected procedural assignments (removed `assign`), comparison `!== 8'h99`, `$fatal` quoting, `$finish;`, and balanced block structure. **Remaining compilation blocker:** inputs still use C/Python literals `0x53`, `0xCA` instead of Verilog `8'h53`, `8'hCA`. **Conceptual gap:** interpreted `#1` as check duration; taught that it advances simulation time by one timescale unit to allow event propagation/settling before checking. Retest literal syntax and `#1` explanation; keep Exercise 21 open.
