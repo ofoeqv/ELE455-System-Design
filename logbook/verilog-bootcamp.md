@@ -143,3 +143,6 @@ Earlier separate course preparation (reported in chat, **not verified by current
 
 ### Exercise 22C — simulation delay concept (2026-10-12)
 User selected B correctly: without second `#1;`, checker might sample stale output `8'h99` before the newly assigned inputs propagate to `y`. Exercise 22 completed: 5/5 static code review + conceptual check passed; no simulator execution. Next: Exercise 23 predict mutant XOR→AND, expected outcome and `$fatal` termination.
+
+### Exercise 22 — FIRST SIMULATOR-CONFIRMED BOOTCAMP PASS (2026-10-12)
+Evidence submitted as EDA Playground execution transcript: Verilator 5.044 command `verilator --prefix Vsim --binary --build-jobs 0 --build --trace-vcd --quiet-build -Wno-fatal --timescale 1ns/1ns design.sv testbench.sv && obj_dir/Vsim`. Terminal showed `PASS: Both XOR tests`, `Verilog $finish`, and `$finish at 2ns`. The separate design XOR DUT (`assign y = a ^ b;`) and two-vector self-checking bench checked 53^CA=99 and FF^0F=F0 with #1 delays. **VERIFIED: compiled and simulated on EDA Playground using Verilator 5.044; both directed tests pass.** Not tested through course `run.py` or cocotb, not exhaustive. Next: mutate XOR to AND, observe intentional failure, then restore and rerun; record each actual outcome before claiming verification.
