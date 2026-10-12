@@ -140,3 +140,6 @@ Earlier separate course preparation (reported in chat, **not verified by current
 
 ### Exercise 22B — corrected submission (2026-10-12)
 **5/5 static code review, NOT compiled or simulated.** Two directed XOR cases: 53 ^ CA = 99 and FF ^ 0F = F0. Both stimulus sets use correct 8-bit Verilog literals, #1 delays end with semicolons, comparisons use case inequality, fatal checks and finish are present. The conceptual question about why a separate #1 delay is required after changing inputs remains unanswered and should be checked before progression. Prior Exercise 22 first submission was 3/5: `#1,` typo and empty expected expression. Retest corrected both. Spaced repetition: statement delimiters, literal syntax, and simulation event scheduling.
+
+### Exercise 22C — simulation delay concept (2026-10-12)
+User selected B correctly: without second `#1;`, checker might sample stale output `8'h99` before the newly assigned inputs propagate to `y`. Exercise 22 completed: 5/5 static code review + conceptual check passed; no simulator execution. Next: Exercise 23 predict mutant XOR→AND, expected outcome and `$fatal` termination.
