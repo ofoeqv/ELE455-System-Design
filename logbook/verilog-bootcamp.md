@@ -134,3 +134,6 @@ Earlier separate course preparation (reported in chat, **not verified by current
 
 ### Exercise 21C — third submission (2026-10-12)
 **4/5 provisional static review; not compiled or simulated.** Corrected procedural assignments (removed `assign`), comparison `!== 8'h99`, `$fatal` quoting, `$finish;`, and balanced block structure. **Remaining compilation blocker:** inputs still use C/Python literals `0x53`, `0xCA` instead of Verilog `8'h53`, `8'hCA`. **Conceptual gap:** interpreted `#1` as check duration; taught that it advances simulation time by one timescale unit to allow event propagation/settling before checking. Retest literal syntax and `#1` explanation; keep Exercise 21 open.
+
+### Exercise 21D — fourth submission (2026-10-12)
+**5/5 STATIC REVIEW PASS; NOT compiled/simulated.** Complete `tb_xor8` now uses valid procedural stimuli `a = 8'h53; b = 8'hCA;`, `#1;`, `if (y !== 8'h99) begin $fatal(1, "XOR failed"); end`, and `$finish;`; syntax and intended one-vector check pass inspection. User explained `#1` as waiting one simulation time unit; teaching clarified waiting allows scheduled combinational output update before checking. Next milestone: obtain an actual compiler/simulator run and preserve command/output; do not claim simulation pass until evidence is received. Spaced repetition: literals formerly required 4 attempts, revisit later.
