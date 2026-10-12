@@ -149,3 +149,6 @@ Evidence submitted as EDA Playground execution transcript: Verilator 5.044 comma
 
 ### Week 2 — Exercise 26 input-capture correction (2026-10-12)
 Exercise 26 initial `capture <= 1;` incorrect: misspelled `captured` and assigned a constant. Exercise 26B `captured <= 8'h83` still hardcoded and omitted semicolon. Exercise 26C corrected to `captured <= in_data;` — **1/1 static review** (not compiled/simulated). Spaced repetition: register naming, signal vs literal, procedural nonblocking assignment and semicolons. Next Exercise 27: replace busy-path `out_valid <= 0;` with a valid-publication pulse; one line only.
+
+### Bootcamp direction update — 2026-10-12
+User reaffirmed original 8-stage roadmap. Stages 1–4 treated as foundational practice, not fully simulator-verified. The emphasis now shifts to Stage 5 datapath+controller, Stage 6 verification, Stage 7 AES RTL, and Stage 8 Vivado FPGA implementation. Goal: be prepared to **begin** FPGA implementation 2026-10-13, not claim full AES completion. EDA Playground Verilator 5.044 is working (two directed XOR checks passed). Resume one exercise at a time and require actual simulation logs to claim verification. Set aside professor Week 2 preparation drill (Exercise 27 not answered) rather than incorrectly marking it complete.
