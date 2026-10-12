@@ -120,3 +120,11 @@ Earlier separate course preparation (reported in chat, **not verified by current
 4. Demand one explicit stimulus/expected output/failure assertion before introducing broader verification.
 5. Ask for actual terminal output when simulation is performed; keep commands and evidence.
 6. Append future successes and failures to this file (or a dated continuation) once confirmed.
+
+## Exercise 21 — first submission (2026-10-12)
+**Status: 2/5 tutor-reviewed, not compiled or simulated. Retest required.**
+- Correct DUT instantiation, initial block and delay, intended 53/CA → 99 check.
+- First error: wrote `assign a = 0x53;` and `assign b = 0xCA;` inside `initial`. Use procedural `a = 8'h53;` and `b = 8'hCA;`; `0x` is not Verilog literal syntax. Legacy procedural continuous assignment exists but is inappropriate here.
+- `!==` is acceptable and catches X/Z, but comparison literal should be `8'h99`.
+- Unterminated string in `$fatal(1, "XOR failed);`; missing `$finish;`.
+- Nesting balanced; retest exact syntax and success/failure simulation termination. Do not mark as passed until revised.
