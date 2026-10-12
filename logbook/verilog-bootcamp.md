@@ -128,3 +128,6 @@ Earlier separate course preparation (reported in chat, **not verified by current
 - `!==` is acceptable and catches X/Z, but comparison literal should be `8'h99`.
 - Unterminated string in `$fatal(1, "XOR failed);`; missing `$finish;`.
 - Nesting balanced; retest exact syntax and success/failure simulation termination. Do not mark as passed until revised.
+
+### Exercise 21B — second submission (2026-10-12)
+**3/5 static review, NOT compiled/simulated; correction still required.** Fixed `8'h99` comparison and closed `$fatal` message; blocks balanced. Repeated `assign a = 0x53;` / `assign b = 0xCA;` in procedural `initial`: must change to `a = 8'h53;` / `b = 8'hCA;`. `$finish` missing semicolon. Did not answer why `#1;` is needed (simulation scheduling/settling). Prioritize procedural vs continuous assignment and literal syntax for spaced repetition. Next task: corrected complete TB and conceptual explanation, no progression yet.
